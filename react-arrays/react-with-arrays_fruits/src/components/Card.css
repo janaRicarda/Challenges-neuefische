@@ -1,0 +1,27 @@
+.card {
+  width: 70%;
+  padding: 20px;
+  margin-inline: auto;
+  margin-block: 20px;
+  background-color: var(--color-water);
+}
+
+.card--yellow {
+  background-color: yellow;
+}
+
+.card--red {
+  background-color: crimson;
+}
+
+.card--limegreen {
+  background-color: limegreen;
+}
+
+.card--hotpink {
+  background-color: hotpink;
+}
+
+.card--darkorchid {
+  background-color: darkorchid;
+}
