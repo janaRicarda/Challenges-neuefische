@@ -55,7 +55,7 @@ export default function EntriesSection() {
               motto={entry.motto}
               notes={entry.notes}
             />
-            {index !== entries.length - 1 && <Divider />}
+            {entries.length - 1 === index ? null : <Divider />}
           </>
         ))}
 
