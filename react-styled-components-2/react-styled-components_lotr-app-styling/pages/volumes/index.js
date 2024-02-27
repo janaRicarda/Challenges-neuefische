@@ -3,8 +3,12 @@ import { introduction, volumes } from "../../lib/data";
 import styled from "styled-components";
 import Image from "next/image";
 
-const StyledBody = styled.body`
+const StyledMain = styled.main`
   padding: 1rem;
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--color-earth);
+    color: var(--color-clouds);
+  }
 `;
 
 const StyledH1 = styled.h1`
@@ -40,6 +44,9 @@ const StyledLink = styled(Link)`
   flex-direction: column;
   gap: 10px;
   font: var(--font-caption);
+  @media (prefers-color-scheme: dark) {
+    color: var(--color-clouds);
+  }
 `;
 
 const StyledImage = styled(Image)`
@@ -53,7 +60,7 @@ const StyledImage = styled(Image)`
 export default function Volumes() {
   return (
     <>
-      <StyledBody>
+      <StyledMain>
         <StyledH1>The Lord of the Rings</StyledH1>
         <StyledP>{introduction}</StyledP>
         <StyledH2>All Volumes</StyledH2>
@@ -72,7 +79,7 @@ export default function Volumes() {
             </StyledListItem>
           ))}
         </StyledList>
-      </StyledBody>
+      </StyledMain>
     </>
   );
 }

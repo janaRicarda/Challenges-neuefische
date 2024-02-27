@@ -3,15 +3,27 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { volumes } from "../../lib/data";
 import styled from "styled-components";
-//import  chevron-left  from "../../icons/chevron-left.svg";
+import ChevronLeft from "../../icons/chevron-left.svg";
+import ArrowLeft from "../../icons/arrow-left.svg";
+import ArrowRight from "../../icons/arrow-right.svg";
 
-const StyledBody = styled.body`
+const StyledMain = styled.main`
   padding: 2rem;
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--color-earth);
+    color: var(--color-clouds);
+  }
 `;
+
 const StyledLink = styled(Link)`
   text-decoration: none;
   font: var(--font-body);
   color: black;
+  display: flex;
+  align-items: center;
+  @media (prefers-color-scheme: dark) {
+    color: var(--color-clouds);
+  }
 `;
 
 const StyledH1 = styled.h1`
@@ -63,8 +75,11 @@ export default function VolumeDetail() {
 
   return (
     <>
-      <StyledBody>
-        <StyledLink href="/volumes">All Volumes</StyledLink>
+      <StyledMain>
+        <StyledLink href="/volumes">
+          <ChevronLeft />
+          All Volumes
+        </StyledLink>
         <StyledH1>{title}</StyledH1>
         <StyledP>{description}</StyledP>
         <StyledSection $color={volume.color}>
@@ -86,18 +101,18 @@ export default function VolumeDetail() {
         {previousVolume ? (
           <div>
             <StyledLink href={`/volumes/${previousVolume.slug}`}>
-              ← Previous Volume: {previousVolume.title}
+              <ArrowLeft /> Previous Volume: {previousVolume.title}
             </StyledLink>
           </div>
         ) : null}
         {nextVolume ? (
           <div>
             <StyledLink href={`/volumes/${nextVolume.slug}`}>
-              Next Volume: {nextVolume.title} →
+              Next Volume: {nextVolume.title} <ArrowRight />
             </StyledLink>
           </div>
         ) : null}
-      </StyledBody>
+      </StyledMain>
     </>
   );
 }
