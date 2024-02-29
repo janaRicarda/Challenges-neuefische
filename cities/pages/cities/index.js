@@ -6,6 +6,10 @@ import styled from "styled-components";
 const StyledDiv = styled.div`
   margin: 2rem;
   padding: 1rem;
+  @media (prefers-color-scheme: dark) {
+    background-color: black;
+    color: white;
+  }
 `;
 
 const StyledList = styled.ul`
@@ -18,7 +22,7 @@ const StyledListItem = styled.li`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-  color: black;
+  color: white;
   cursor: mousover;
   padding: 1rem;
   border-radius: 6px;
