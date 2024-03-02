@@ -4,12 +4,17 @@ import Head from "next/head";
 import styled from "styled-components";
 
 const StyledDiv = styled.div`
-  margin: 2rem;
-  padding: 1rem;
+  margin: 1rem;
+  padding: 2rem;
+  border-radius: 10px;
   @media (prefers-color-scheme: dark) {
     background-color: black;
     color: white;
   }
+`;
+
+const StyledH1 = styled.h1`
+  font-family: var(--font-family);
 `;
 
 const StyledList = styled.ul`
@@ -17,18 +22,17 @@ const StyledList = styled.ul`
   padding-left: 0;
 `;
 const StyledListItem = styled.li`
-  padding: 0.5rem;
+  padding: 0.3rem;
+  padding-left: 0;
 `;
 
 const StyledLink = styled(Link)`
   text-decoration: none;
   color: white;
   cursor: mousover;
-  padding: 1rem;
-  border-radius: 6px;
   &:hover {
     color: ${({ $color }) => $color}; 
-    background-color: black;
+    
     
 `;
 
@@ -38,7 +42,7 @@ export default function Cities() {
       <Head>
         <title>cities</title>
       </Head>
-      <h1>Cities</h1>
+      <StyledH1>Cities to explore...</StyledH1>
       <StyledList>
         {cities.map((city) => (
           <StyledListItem key={city.id}>

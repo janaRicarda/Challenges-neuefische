@@ -5,17 +5,20 @@ import Head from "next/head";
 import Link from "next/link";
 
 const StyledDiv = styled.div`
-  margin: 2rem;
-  padding: 1rem;
-  @media (prefers-color-scheme: dark) {
-    background-color: black;
-  }
+  margin: 1rem;
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: black;
+`;
+const StyledH1 = styled.h1`
+  font-family: var(--font-family);
+  font-size: 50px;
 `;
 
 const StyledArticle = styled.article`
   border: 1px solid black;
   border-radius: 10px;
-  padding: 1rem;
+  padding: 2rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
   background-color: ${({ $color }) => $color};
@@ -23,16 +26,10 @@ const StyledArticle = styled.article`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-
   color: ${({ $prevColor, $nextColor, $color }) =>
     $prevColor ? $prevColor : $nextColor ? $nextColor : $color};
   cursor: mousover;
-  padding: 1rem;
   border-radius: 10px;
-  &:hover {
-    color: ${({ $color }) => $color};
-    // background-color: black;
-  }
 `;
 
 const StyledPrevDiv = styled.div`
@@ -40,9 +37,9 @@ const StyledPrevDiv = styled.div`
   color: ${({ $prevColor }) => $prevColor};
   padding: 0.3rem;
   border-radius: 10px;
-
   flex: 1;
   text-align: left;
+  padding-left: 0;
 `;
 
 const StyledNextDiv = styled.div`
@@ -50,9 +47,9 @@ const StyledNextDiv = styled.div`
   color: ${({ $nextColor }) => $nextColor};
   padding: 0.3rem;
   border-radius: 10px;
-
   flex: 1;
   text-align: right;
+  padding-right: 0;
 `;
 
 const StyledLinkSection = styled.section`
@@ -91,7 +88,7 @@ export default function City() {
           ⬅ Go back to city list
         </StyledLink>
         <StyledArticle $color={city.color}>
-          <h1>{city.name}</h1>
+          <StyledH1>{city.name}</StyledH1>
           <p>{city.description}</p>
         </StyledArticle>
         <StyledLinkSection>

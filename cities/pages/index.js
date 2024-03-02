@@ -5,10 +5,18 @@ import styled from "styled-components";
 const StyledDiv = styled.div`
   margin: 2rem;
   padding: 1rem;
+  border: 1px solid pink;
+  border-radius: 10px;
 `;
+
+const StyledH1 = styled.h1`
+  font-family: var(--font-family);
+`;
+
 const StyledLink = styled(Link)`
   text-decoration: none;
   color: black;
+
   cursor: mousover;
   &:hover {
     color: coral;
@@ -22,7 +30,7 @@ export default function HomePage() {
         <title>CityApp</title>
       </Head>
       <StyledDiv>
-        <h1>Welcome to my cities App.</h1>
+        <StyledH1>Welcome to my cities App.</StyledH1>
         <StyledLink href="/cities">Go to cities →</StyledLink>
       </StyledDiv>
     </>
