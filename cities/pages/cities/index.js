@@ -7,10 +7,8 @@ const StyledDiv = styled.div`
   margin: 1rem;
   padding: 2rem;
   border-radius: 10px;
-  @media (prefers-color-scheme: dark) {
-    background-color: black;
-    color: white;
-  }
+  color: white;
+  background-color: black;
 `;
 
 const StyledH1 = styled.h1`

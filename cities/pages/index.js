@@ -3,23 +3,29 @@ import Head from "next/head";
 import styled from "styled-components";
 
 const StyledDiv = styled.div`
-  margin: 2rem;
-  padding: 1rem;
-  border: 1px solid pink;
+  margin: 1rem;
+  padding: 2rem;
   border-radius: 10px;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const StyledH1 = styled.h1`
   font-family: var(--font-family);
+  text-align: center;
+  font-size: 40px;
 `;
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-  color: black;
-
+  color: white;
+  font-size: 25px;
   cursor: mousover;
   &:hover {
-    color: coral;
+    color: hotpink;
   }
 `;
 
