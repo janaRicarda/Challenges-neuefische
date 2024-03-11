@@ -1,7 +1,9 @@
 import useSWR from "swr";
 
+const fetcher = (url) => fetch(url).then((response) => response.json());
+
 export default function ProductList() {
-  const { data: products, isLoading } = useSWR("/api/products");
+  const { data: products, isLoading } = useSWR("/api/products", fetcher);
 
   if (isLoading) <h1>Loading...</h1>;
 
