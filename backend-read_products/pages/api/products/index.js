@@ -1,5 +1,3 @@
-//import { products } from "../../../lib/products";
-
 import dbConnect from "@/db/connect";
 import Product from "@/db/models/Product";
 
